@@ -1,56 +1,56 @@
 {
   "hero": {
-    "src": "https://picsum.photos/seed/hero/1920/1080",
-    "hint": "landscape garden"
+    "src": "https://picsum.photos/seed/garden-hero/1920/1080",
+    "hint": "well-kept garden"
   },
   "about1": {
-    "src": "https://picsum.photos/seed/about1/600/400",
-    "hint": "gardening tools"
+    "src": "https://picsum.photos/seed/pruning/600/400",
+    "hint": "professional pruning"
   },
   "about2": {
-    "src": "https://picsum.photos/seed/about2/600/400",
-    "hint": "clean building"
+    "src": "https://picsum.photos/seed/irrigation/600/400",
+    "hint": "irrigation system"
   },
   "about3": {
-    "src": "https://picsum.photos/seed/about3/600/400",
-    "hint": "construction site"
+    "src": "https://picsum.photos/seed/excavator/600/400",
+    "hint": "small excavator"
   },
   "contact": {
-    "src": "https://picsum.photos/seed/contact/1200/800",
-    "hint": "customer service"
+    "src": "https://picsum.photos/seed/plants-contact/1200/800",
+    "hint": "potted plants"
   },
   "services": {
     "giardinaggio": {
-      "src": "https://picsum.photos/seed/giardinaggio/800/600",
-      "hint": "manicured lawn"
+      "src": "https://picsum.photos/seed/lush-garden/800/600",
+      "hint": "lush garden"
     },
     "puliziaTerreni": {
-      "src": "https://picsum.photos/seed/puliziaterreni/800/600",
-      "hint": "cleared land"
+      "src": "https://picsum.photos/seed/land-clearing/800/600",
+      "hint": "land clearing"
     },
     "taglioPiante": {
-      "src": "https://picsum.photos/seed/tagliopiante/800/600",
-      "hint": "tree trimming"
+      "src": "https://picsum.photos/seed/arborist/800/600",
+      "hint": "arborist work"
     },
     "pulizieCondomini": {
-      "src": "https://picsum.photos/seed/puliziecondomini/800/600",
-      "hint": "apartment hallway"
+      "src": "https://picsum.photos/seed/clean-condo/800/600",
+      "hint": "clean entrance"
     },
     "lavoriEdili": {
-      "src": "https://picsum.photos/seed/lavoriedili/800/600",
-      "hint": "brick wall"
+      "src": "https://picsum.photos/seed/renovation/800/600",
+      "hint": "renovation work"
     },
     "scavi": {
-      "src": "https://picsum.photos/seed/scavi/800/600",
-      "hint": "mini excavator"
+      "src": "https://picsum.photos/seed/earthmoving/800/600",
+      "hint": "earthmoving"
     },
     "impiantiIrrigazione": {
-      "src": "https://picsum.photos/seed/irrigazione/800/600",
-      "hint": "garden sprinkler"
+      "src": "https://picsum.photos/seed/sprinklers/800/600",
+      "hint": "sprinkler water"
     },
     "taglioSiepi": {
-      "src": "https://picsum.photos/seed/tagliosiepi/800/600",
-      "hint": "trimmed hedge"
+      "src": "https://picsum.photos/seed/hedge-trim/800/600",
+      "hint": "hedge trimming"
     }
   }
 }
