@@ -18,5 +18,39 @@
   "contact": {
     "src": "https://picsum.photos/seed/contact/1200/800",
     "hint": "customer service"
+  },
+  "services": {
+    "giardinaggio": {
+      "src": "https://picsum.photos/seed/giardinaggio/800/600",
+      "hint": "manicured lawn"
+    },
+    "puliziaTerreni": {
+      "src": "https://picsum.photos/seed/puliziaterreni/800/600",
+      "hint": "cleared land"
+    },
+    "taglioPiante": {
+      "src": "https://picsum.photos/seed/tagliopiante/800/600",
+      "hint": "tree trimming"
+    },
+    "pulizieCondomini": {
+      "src": "https://picsum.photos/seed/puliziecondomini/800/600",
+      "hint": "apartment hallway"
+    },
+    "lavoriEdili": {
+      "src": "https://picsum.photos/seed/lavoriedili/800/600",
+      "hint": "brick wall"
+    },
+    "scavi": {
+      "src": "https://picsum.photos/seed/scavi/800/600",
+      "hint": "mini excavator"
+    },
+    "impiantiIrrigazione": {
+      "src": "https://picsum.photos/seed/irrigazione/800/600",
+      "hint": "garden sprinkler"
+    },
+    "taglioSiepi": {
+      "src": "https://picsum.photos/seed/tagliosiepi/800/600",
+      "hint": "trimmed hedge"
+    }
   }
 }

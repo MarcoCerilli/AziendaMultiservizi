@@ -1,36 +1,41 @@
 import { getServices } from '@/lib/data';
 import type { Service } from '@/types';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
 
 export const metadata = {
   title: 'Servizi - Zecchi Soluzioni',
   description: 'Scopri la nostra gamma completa di servizi professionali per casa e giardino a Pistoia e dintorni.',
 };
 
-async function ServicesGrid() {
-  const services = await getServices();
+function ServiceItem({ service, reverse = false }: { service: Service; reverse?: boolean }) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {services.map((service: Service) => (
-        <Card
-          key={service.id}
-          className="flex transform-gpu flex-col justify-between border-border/60 bg-secondary/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20"
-        >
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">{service.name}</CardTitle>
-            <service.icon className="h-6 w-6 text-primary" />
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">Descrizione del servizio {service.name.toLowerCase()}.</p>
-          </CardContent>
-        </Card>
-      ))}
+    <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center")}>
+      <div className={cn("overflow-hidden rounded-lg shadow-lg", reverse && "md:col-start-2")}>
+        <Image
+          src={service.image.src}
+          alt={`Immagine per il servizio ${service.name}`}
+          width={800}
+          height={600}
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          data-ai-hint={service.image.hint}
+        />
+      </div>
+      <div className={cn("space-y-4", reverse && "md:col-start-1 md:row-start-1")}>
+        <div className="flex items-center gap-4">
+          <service.icon className="h-8 w-8 text-primary" />
+          <h2 className="text-3xl font-bold tracking-tight">{service.name}</h2>
+        </div>
+        <p className="text-lg text-muted-foreground">{service.description}</p>
+      </div>
     </div>
   );
 }
 
 export default async function ServiziPage() {
+  const services = await getServices();
+
   return (
     <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-20">
       <div className="space-y-4 text-center">
@@ -44,7 +49,11 @@ export default async function ServiziPage() {
 
       <Separator className="my-12" />
       
-      <ServicesGrid />
+      <div className="space-y-16 md:space-y-24">
+        {services.map((service, index) => (
+          <ServiceItem key={service.id} service={service} reverse={index % 2 !== 0} />
+        ))}
+      </div>
     </div>
   );
 }

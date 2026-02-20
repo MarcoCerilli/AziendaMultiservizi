@@ -4,6 +4,11 @@ export type Service = {
   id: string;
   name: string;
   icon: LucideIcon;
+  description: string;
+  image: {
+    src: string;
+    hint: string;
+  };
 };
 
 export type ContactInfo = {
