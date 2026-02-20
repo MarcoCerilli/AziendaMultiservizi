@@ -42,7 +42,7 @@ function NavLink({ href, children }: { href: string, children: React.ReactNode }
     const pathname = usePathname();
     const isActive = pathname === href;
     return (
-        <Link href={href} className={cn("transition-colors hover:text-primary", isActive ? 'text-primary' : 'text-muted-foreground')}>
+        <Link href={href} className={cn("transition-colors text-lg hover:text-primary", isActive ? 'text-primary' : 'text-muted-foreground')}>
             {children}
         </Link>
     );
@@ -52,11 +52,11 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-xl items-center justify-between px-4">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card">
+      <div className="container flex h-20 max-w-screen-xl items-center justify-between px-4">
         <ZecchiLogo />
 
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-8 font-medium md:flex">
           {navLinks.map(link => (
             <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
           ))}

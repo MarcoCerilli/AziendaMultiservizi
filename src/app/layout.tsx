@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { AiAssistant } from '@/components/AiAssistant';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
   title: {
@@ -36,6 +37,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
         <AiAssistant />
         <Toaster />
       </body>
