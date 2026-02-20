@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "src": "https://picsum.photos/seed/hero/1920/1080",
+    "hint": "landscape garden"
+  },
+  "about1": {
+    "src": "https://picsum.photos/seed/about1/600/400",
+    "hint": "gardening tools"
+  },
+  "about2": {
+    "src": "https://picsum.photos/seed/about2/600/400",
+    "hint": "clean building"
+  },
+  "about3": {
+    "src": "https://picsum.photos/seed/about3/600/400",
+    "hint": "construction site"
+  },
+  "contact": {
+    "src": "https://picsum.photos/seed/contact/1200/800",
+    "hint": "customer service"
+  }
+}
