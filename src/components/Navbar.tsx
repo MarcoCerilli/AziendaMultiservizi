@@ -10,22 +10,18 @@ import { cn } from '@/lib/utils';
 
 function ZecchiLogo() {
   return (
-    <Link href="/" className="flex items-center gap-2" aria-label="Zecchi Soluzioni Homepage">
+    <Link href="/" className="flex items-center gap-3" aria-label="Zecchi Soluzioni Homepage">
       <svg
-        width="32"
-        height="32"
+        width="40"
+        height="40"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="text-primary"
       >
-        <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 12L22 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 12V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 12L2 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M7 9.5L17 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7 3H17L12 12L17 21H7L12 12L7 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <span className="text-xl font-semibold text-foreground">
+      <span className="text-2xl font-semibold text-foreground">
         Zecchi Soluzioni
       </span>
     </Link>
@@ -53,7 +49,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card">
-      <div className="container flex h-20 max-w-screen-xl items-center justify-between px-4">
+      <div className="container flex h-24 max-w-screen-xl items-center justify-between px-4">
         <ZecchiLogo />
 
         <nav className="hidden items-center gap-8 font-medium md:flex">
