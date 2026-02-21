@@ -48,7 +48,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-secondary">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card">
       <div className="container flex h-24 max-w-screen-xl items-center justify-between px-4">
         <ZecchiLogo />
 
