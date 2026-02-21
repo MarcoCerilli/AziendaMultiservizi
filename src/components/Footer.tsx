@@ -23,7 +23,7 @@ function ZecchiLogo() {
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/40 bg-card">
+    <footer className="w-full border-t border-border/40 bg-secondary">
       <div className="container mx-auto grid max-w-screen-xl grid-cols-1 items-center gap-8 px-4 py-8 text-center md:grid-cols-3 md:text-left">
         <div className="flex flex-col items-center md:items-start">
           <ZecchiLogo />
