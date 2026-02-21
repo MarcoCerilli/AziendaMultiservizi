@@ -74,6 +74,14 @@ function AboutSection() {
                 </li>
               ))}
             </ul>
+            <div className="pt-4">
+                <Button asChild size="lg">
+                    <Link href="/contatti">
+                        Richiedi un Preventivo Gratuito
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
               <Image

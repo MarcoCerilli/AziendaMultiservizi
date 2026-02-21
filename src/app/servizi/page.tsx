@@ -3,10 +3,13 @@ import type { Service } from '@/types';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Servizi - Zecchi Soluzioni',
-  description: 'Scopri la nostra gamma completa di servizi professionali per casa e giardino a Pistoia e dintorni.',
+  title: 'Servizi Professionali - Zecchi Soluzioni Pistoia',
+  description: 'Scopri i nostri servizi: giardinaggio, pulizia terreni, potatura alto fusto, pulizie condomini, edilizia, scavi, impianti di irrigazione e taglio siepi.',
 };
 
 function ServiceItem({ service, reverse = false }: { service: Service; reverse?: boolean }) {
@@ -33,6 +36,27 @@ function ServiceItem({ service, reverse = false }: { service: Service; reverse?:
   );
 }
 
+function CtaSection() {
+    return (
+        <section className="w-full py-12 md:py-20 bg-secondary/30 rounded-lg">
+            <div className="container mx-auto max-w-screen-xl px-4 text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Pronto a trasformare il tuo spazio?</h2>
+                <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground md:text-xl">
+                    Contattaci oggi stesso per un sopralluogo e un preventivo gratuito e senza impegno. Troviamo insieme la soluzione perfetta per te.
+                </p>
+                <div className="mt-8">
+                    <Button asChild size="lg">
+                        <Link href="/contatti">
+                            Contattaci Ora
+                            <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
+                </div>
+            </div>
+        </section>
+    );
+}
+
 export default async function ServiziPage() {
   const services = await getServices();
 
@@ -54,6 +78,10 @@ export default async function ServiziPage() {
           <ServiceItem key={service.id} service={service} reverse={index % 2 !== 0} />
         ))}
       </div>
+      
+      <Separator className="my-16" />
+
+      <CtaSection />
     </div>
   );
 }

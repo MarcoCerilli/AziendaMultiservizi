@@ -6,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 export const metadata = {
-  title: 'Contatti - Zecchi Soluzioni',
-  description: 'Contattaci per informazioni, preventivi o qualsiasi altra esigenza. Siamo a tua disposizione.',
+  title: 'Contatti e Preventivi Gratuiti - Zecchi Soluzioni',
+  description: 'Contatta Zecchi Soluzioni per informazioni o un preventivo gratuito a Pistoia. Chiama ora Monica Zecchi o invia una mail per i tuoi lavori di giardinaggio, pulizia o edilizia.',
 };
 
 export default async function ContattiPage() {
