@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, FileText } from 'lucide-react';
 import { WhatsAppButton } from './WhatsAppButton';
 
 function ZecchiLogoFooter() {
@@ -34,12 +34,23 @@ export function Footer() {
       <div className="container mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
           
-          {/* Colonna 1: Brand Power */}
+          {/* Colonna 1: Brand Power & Sede Legale */}
           <div className="flex flex-col items-center lg:items-start space-y-8">
             <ZecchiLogoFooter />
-            <p className="text-zinc-400 text-lg leading-relaxed max-w-md text-center lg:text-left">
-              Leader nel settore multiservizi a <span className="text-white font-bold">Terracina e Provincia</span>. Dal giardinaggio professionale all'edilizia di qualità.
-            </p>
+            <div className="space-y-4 text-center lg:text-left">
+              <p className="text-zinc-400 text-lg leading-relaxed max-w-md">
+                Leader nel settore multiservizi a <span className="text-white font-bold">Terracina e Provincia</span>. Dal giardinaggio professionale all'edilizia di qualità.
+              </p>
+              {/* Dati estratti dall'immagine */}
+              <div className="pt-4 border-t border-white/5 space-y-2 text-zinc-500 text-xs uppercase tracking-widest font-medium">
+                <p className="flex items-center justify-center lg:justify-start gap-2">
+                  <MapPin className="h-3 w-3 text-primary" /> Via C. Fusco, 4 - 04019 Terracina (LT)
+                </p>
+                <p className="flex items-center justify-center lg:justify-start gap-2">
+                  <FileText className="h-3 w-3 text-primary" /> C.F. ZCC MNC 72B44 L120G
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Colonna 2: Contatti Premium */}
@@ -60,28 +71,41 @@ export function Footer() {
                 </a>
                 <div className="flex items-center gap-3 justify-center text-zinc-400 pt-2 text-sm">
                    <Mail className="h-4 w-4 text-primary" />
-                   <span>monicazecchi56@gmail.com</span>
+                   <span className="hover:text-white transition-colors underline decoration-primary/30">monicazecchi56@gmail.com</span>
                 </div>
             </div>
           </div>
 
-          {/* Colonna 3: Social & Trust */}
+          {/* Colonna 3: Social & P.IVA */}
           <div className="flex flex-col items-center lg:items-end space-y-10">
             <div className="flex gap-4">
-                <Link href="#" className="bg-primary text-black p-5 rounded-full hover:bg-white hover:scale-110 transition-all shadow-2xl">
+                <Link 
+                  href="https://www.facebook.com/AziendaMultiserviziZecchi" 
+                  target="_blank"
+                  className="bg-[#1877F2] text-white p-4 rounded-full hover:scale-110 transition-all shadow-lg"
+                >
                     <Facebook className="h-7 w-7" />
                 </Link>
-                <Link href="#" className="bg-primary text-black p-5 rounded-full hover:bg-white hover:scale-110 transition-all shadow-2xl">
+                
+                <Link 
+                  href="https://www.instagram.com/zecchimultiservizi" 
+                  target="_blank"
+                  className="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white p-4 rounded-full hover:scale-110 transition-all shadow-lg"
+                >
                     <Instagram className="h-7 w-7" />
                 </Link>
             </div>
             
             <div className="text-center lg:text-right space-y-2">
-              <div className="flex items-center justify-center lg:justify-end gap-2 text-primary font-bold uppercase text-xs">
+              <div className="flex items-center justify-center lg:justify-end gap-2 text-primary font-bold uppercase text-xs tracking-widest">
                 <MapPin className="h-4 w-4" />
-                <span>Terracina (LT), Lazio</span>
+                <span>Sede Operativa: Terracina (LT)</span>
               </div>
-              <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em]">© {new Date().getFullYear()} Zecchi Multiservizi P.IVA 02931210591</p>
+              <div className="text-zinc-400 text-[10px] uppercase tracking-[0.2em] leading-relaxed">
+                <p>© {new Date().getFullYear()} Zecchi Multiservizi</p>
+                {/* P.IVA aggiornata dall'immagine */}
+                <p className="font-bold text-zinc-400 mt-1">P. IVA 02990560597</p>
+              </div>
             </div>
           </div>
         </div>
