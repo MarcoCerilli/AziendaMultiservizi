@@ -6,8 +6,14 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, Phone, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+} from "./ui/sheet";
 
 function ZecchiLogo() {
   return (
@@ -52,7 +58,6 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-primary/30 bg-zinc-950/95 backdrop-blur-xl shadow-2xl">
       {/* Altezza aumentata a h-28 / h-32 */}
       <div className="mx-auto flex h-28 md:h-32 max-w-7xl items-center justify-between px-6 lg:px-8">
-        
         <div className="flex-shrink-0">
           <ZecchiLogo />
         </div>
@@ -60,19 +65,23 @@ export function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex flex-1 justify-center gap-12">
           {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
+            <Link
+              key={link.href}
               href={link.href}
               className={cn(
                 "group relative text-base uppercase tracking-widest font-black transition-colors",
-                pathname === link.href ? "text-primary" : "text-white/80 hover:text-white"
+                pathname === link.href
+                  ? "text-primary"
+                  : "text-white/80 hover:text-white",
               )}
             >
               {link.label}
-              <span className={cn(
-                "absolute -bottom-2 left-0 h-1 bg-primary transition-all duration-300",
-                pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-              )} />
+              <span
+                className={cn(
+                  "absolute -bottom-2 left-0 h-1 bg-primary transition-all duration-300",
+                  pathname === link.href ? "w-full" : "w-0 group-hover:w-full",
+                )}
+              />
             </Link>
           ))}
         </nav>
@@ -85,7 +94,7 @@ export function Navbar() {
           >
             <a href="tel:+393404962500">
               <span className="relative z-10 flex items-center">
-                <Phone className="mr-2 h-5 w-5 animate-pulse" /> 
+                <Phone className="mr-2 h-5 w-5 animate-pulse" />
                 Contattaci
                 <ArrowRight className="ml-2 h-0 w-0 transition-all group-hover:h-5 group-hover:w-5" />
               </span>
@@ -96,28 +105,39 @@ export function Navbar() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white hover:bg-primary/20">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white hover:bg-primary/20"
+                >
                   <Menu className="h-10 w-10 text-primary" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-zinc-950 border-primary/20 text-white w-[300px]">
+              <SheetContent
+                side="right"
+                className="bg-zinc-950 border-primary/20 text-white w-[300px]"
+              >
+                <SheetTitle className="sr-only">Menu di Navigazione</SheetTitle>
+                <SheetDescription className="sr-only">
+                  Accedi alle sezioni del sito Zecchi Multiservizi
+                </SheetDescription>
                 <div className="flex flex-col gap-10 pt-16 items-center">
-                   <ZecchiLogo />
-                   <div className="flex flex-col gap-6 text-center">
-                     {navLinks.map((link) => (
-                       <Link 
-                        key={link.href} 
-                        href={link.href} 
+                  <ZecchiLogo />
+                  <div className="flex flex-col gap-6 text-center">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-black uppercase tracking-tighter hover:text-primary"
-                       >
-                         {link.label}
-                       </Link>
-                     ))}
-                   </div>
-                   <Button className="w-full bg-primary text-black font-bold h-14 rounded-full">
-                      <a href="tel:+393404962500">CHIAMA ORA</a>
-                   </Button>
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <Button className="w-full bg-primary text-black font-bold h-14 rounded-full">
+                    <a href="tel:+393404962500">CHIAMA ORA</a>
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>

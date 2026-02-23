@@ -6,6 +6,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { AiAssistant } from '@/components/AiAssistant';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { LeadPopup } from '@/components/LeadPopup';
 
 export const metadata: Metadata = {
   title: {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WhatsAppButton /> 
         
         <Toaster />
+        <LeadPopup />
       </body>
     </html>
   );

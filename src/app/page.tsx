@@ -25,7 +25,7 @@ function HeroSection() {
           <div className="space-y-4">
             <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl md:text-8xl lg:leading-[1.1]">
               Professionalità <br />
-              <span className="text-primary italic">nel Verde</span>
+              <span className="text-primary italic">al tuo Servizio</span>
             </h1>
             <p className="max-w-[600px] text-gray-300 text-lg md:text-2xl leading-relaxed">
               Dalle grandi potature agli scavi edili. Zecchi Monica e Fabio: l'esperienza multiservizi che trasforma i tuoi spazi.
