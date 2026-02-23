@@ -36,9 +36,7 @@ export function AiAssistant() {
 
   const form = useForm<ChatInput>({
     resolver: zodResolver(chatSchema),
-    defaultValues: {
-      message: '',
-    },
+    defaultValues: { message: '' },
   });
 
   const onSubmit: SubmitHandler<ChatInput> = async (data) => {
@@ -74,11 +72,9 @@ export function AiAssistant() {
       }
     }
   }, [messages]);
-  
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      // Add initial greeting message
       setMessages([
         {
           role: 'bot',
@@ -91,17 +87,28 @@ export function AiAssistant() {
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <Button
-          className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-primary shadow-lg hover:bg-primary/90"
-          aria-label="Apri assistente AI"
-        >
-          <Bot className="h-8 w-8 text-primary-foreground" />
-        </Button>
+        <div className="fixed bottom-6 right-6 z-50">
+          {/* EFFETTO PULSE: Un bagliore che respira, diverso dal ping di WhatsApp */}
+          {!isOpen && (
+            <div className="absolute inset-0 rounded-full bg-primary/40 animate-pulse scale-110 blur-sm" />
+          )}
+          
+          <Button
+            /* p-0 e dimensioni h-14 w-14 per essere identico a WhatsApp */
+            className="relative h-14 w-14 rounded-full bg-primary p-0 shadow-lg hover:bg-primary/90 transition-transform hover:scale-110"
+            aria-label="Apri assistente AI"
+          >
+            {/* Icona h-9 per ridurre il padding interno verde/colore primario */}
+            <Bot className="h-9 w-9 text-primary-foreground" />
+          </Button>
+        </div>
       </PopoverTrigger>
+
       <PopoverContent
         side="top"
         align="end"
-        className="w-[350px] md:w-[400px] h-[500px] rounded-lg border-2 border-border/40 bg-background/80 p-0 shadow-2xl backdrop-blur-md"
+        sideOffset={85} /* Offset per non coprire il tasto WhatsApp che sta a bottom-[100px] */
+        className="w-[350px] md:w-[400px] h-[500px] rounded-lg border-2 border-border/40 bg-background/80 p-0 shadow-2xl backdrop-blur-md z-[9999]"
       >
         <div className="flex h-full flex-col">
           <header className="flex items-center gap-3 border-b border-border/40 p-4">

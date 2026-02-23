@@ -16,29 +16,21 @@ export const metadata: Metadata = {
   keywords: 'giardinaggio, pulizie, edilizia, pistoia, zecchi monica, taglio siepi, scavi',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// app/layout.tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className={cn('font-body antialiased min-h-screen bg-background flex flex-col')}>
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 relative"> {/* Aggiunto relative qui */}
           {children}
         </main>
         <Footer />
-        <WhatsAppButton />
-        <AiAssistant />
+        
+        {/* L'ordine conta: l'ultimo ha spesso la priorità visiva */}
+        <AiAssistant /> 
+        <WhatsAppButton /> 
+        
         <Toaster />
       </body>
     </html>
