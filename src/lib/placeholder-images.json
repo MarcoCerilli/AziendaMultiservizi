@@ -1,56 +1,56 @@
 {
   "hero": {
-    "src": "https://picsum.photos/seed/garden-hero/1920/1080",
-    "hint": "well-kept garden"
+    "src": "/images/foto.jpeg",
+    "hint": "Giardino curato Zecchi Multiservizi"
   },
   "about1": {
-    "src": "https://picsum.photos/seed/pruning/600/400",
-    "hint": "professional pruning"
+    "src": "/images/foto1.jpeg",
+    "hint": "Professionalità Zecchi"
   },
   "about2": {
-    "src": "https://picsum.photos/seed/irrigation/600/400",
-    "hint": "irrigation system"
+    "src": "/images/foto2.jpeg",
+    "hint": "Cura dei dettagli"
   },
   "about3": {
-    "src": "https://picsum.photos/seed/excavator/600/400",
-    "hint": "small excavator"
+    "src": "/images/foto3.jpeg",
+    "hint": "Interventi tecnici"
   },
   "contact": {
-    "src": "https://picsum.photos/seed/plants-contact/1200/800",
-    "hint": "potted plants"
+    "src": "/images/foto4.jpeg",
+    "hint": "Contattaci per un preventivo"
   },
   "services": {
     "giardinaggio": {
-      "src": "https://picsum.photos/seed/lush-garden/800/600",
-      "hint": "lush garden"
+      "src": "/images/foto5.jpeg",
+      "hint": "Manutenzione giardini"
     },
     "puliziaTerreni": {
-      "src": "https://picsum.photos/seed/land-clearing/800/600",
-      "hint": "land clearing"
+      "src": "/images/foto6.jpeg",
+      "hint": "Pulizia e decespugliamento"
     },
     "taglioPiante": {
-      "src": "https://picsum.photos/seed/arborist/800/600",
-      "hint": "arborist work"
+      "src": "/images/foto7.jpeg",
+      "hint": "Abbattimento e potatura"
     },
     "pulizieCondomini": {
-      "src": "https://picsum.photos/seed/clean-condo/800/600",
-      "hint": "clean entrance"
+      "src": "/images/foto8.jpeg",
+      "hint": "Servizi condominiali"
     },
     "lavoriEdili": {
-      "src": "https://picsum.photos/seed/renovation/800/600",
-      "hint": "renovation work"
+      "src": "/images/",
+      "hint": "Ristrutturazioni e riparazioni"
     },
     "scavi": {
-      "src": "https://picsum.photos/seed/earthmoving/800/600",
-      "hint": "earthmoving"
+      "src": "/images/foto10.jpeg",
+      "hint": "Movimento terra e scavi"
     },
     "impiantiIrrigazione": {
-      "src": "https://picsum.photos/seed/sprinklers/800/600",
-      "hint": "sprinkler water"
+      "src": "/images/foto1.jpeg",
+      "hint": "Sistemi di irrigazione"
     },
     "taglioSiepi": {
-      "src": "https://picsum.photos/seed/hedge-trim/800/600",
-      "hint": "hedge trimming"
+      "src": "/images/foto2.jpeg",
+      "hint": "Sagomatura siepi"
     }
   }
 }
