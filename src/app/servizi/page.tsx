@@ -25,7 +25,7 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
 
   if (!images || images.length === 0) {
     return (
-      <div className="h-[500px] md:h-[650px] w-full bg-zinc-900 rounded-[3rem] animate-pulse" />
+      <div className="h-[350px] md:h-[650px] w-full bg-zinc-900 rounded-[2rem] md:rounded-[3rem] animate-pulse" />
     );
   }
 
@@ -34,7 +34,7 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="relative h-[500px] md:h-[650px] w-full overflow-hidden rounded-[3rem] shadow-2xl border border-white/10 group bg-zinc-900">
+    <div className="relative h-[350px] md:h-[650px] w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/10 group bg-zinc-900">
       {images.map((img, index) => (
         <div
           key={index}
@@ -43,7 +43,6 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
             index === current ? "opacity-100 scale-100" : "opacity-0 scale-105",
           )}
         >
-          {/* Sfondo sfocato per profondità */}
           <Image
             src={img.src}
             alt=""
@@ -51,7 +50,6 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
             className="object-cover blur-3xl opacity-20"
             unoptimized
           />
-          {/* Immagine principale: Massimizzata nel nuovo formato h-650 */}
           <Image
             src={img.src}
             alt={img.hint}
@@ -68,24 +66,24 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
         <>
           <button
             onClick={prev}
-            className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md p-4 rounded-full hover:bg-primary hover:text-black opacity-0 group-hover:opacity-100 z-20 transition-all text-white"
+            className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md p-3 md:p-4 rounded-full hover:bg-primary hover:text-black opacity-0 group-hover:opacity-100 z-20 transition-all text-white"
           >
-            <ChevronLeft className="h-7 w-7" />
+            <ChevronLeft className="h-5 w-5 md:h-7 md:h-7" />
           </button>
           <button
             onClick={next}
-            className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md p-4 rounded-full hover:bg-primary hover:text-black opacity-0 group-hover:opacity-100 z-20 transition-all text-white"
+            className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md p-3 md:p-4 rounded-full hover:bg-primary hover:text-black opacity-0 group-hover:opacity-100 z-20 transition-all text-white"
           >
-            <ChevronRight className="h-7 w-7" />
+            <ChevronRight className="h-5 w-5 md:h-7 md:h-7" />
           </button>
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+          <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3 z-20">
             {images.map((_, i) => (
               <div 
                 key={i} 
                 className={cn(
-                  "h-1.5 rounded-full transition-all duration-300", 
-                  i === current ? "bg-primary w-10" : "bg-white/20 w-4"
+                  "h-1 md:h-1.5 rounded-full transition-all duration-300", 
+                  i === current ? "bg-primary w-8 md:w-10" : "bg-white/20 w-3 md:w-4"
                 )} 
               />
             ))}
@@ -146,23 +144,25 @@ export default function ServiziPage() {
 
   return (
     <div className="bg-zinc-950 min-h-screen text-white">
-      <div className="container mx-auto max-w-screen-xl px-6 py-24">
+      <div className="container mx-auto max-w-screen-xl px-6 py-12 md:py-24">
         
-        <div className="text-center mb-40 space-y-6">
-          <h1 className="text-6xl md:text-9xl font-black tracking-tighter uppercase italic leading-none">
+        {/* Header ridotto su mobile */}
+        <div className="text-center mb-20 md:mb-40 space-y-4 md:space-y-6">
+          <h1 className="text-5xl md:text-9xl font-black tracking-tighter uppercase italic leading-none">
             I Nostri <span className="text-primary not-italic">Servizi</span>
           </h1>
-          <p className="text-zinc-400 text-xl md:text-2xl max-w-3xl mx-auto italic font-light">
+          <p className="text-zinc-400 text-lg md:text-2xl max-w-3xl mx-auto italic font-light">
             Zecchi Monica e Fabio: l’eccellenza artigiana al servizio del tuo verde a Terracina.
           </p>
         </div>
 
-        <div className="space-y-64">
+        {/* Space-y ridotto su mobile */}
+        <div className="space-y-32 md:space-y-64">
           {SERVICES_DATA.map((service, index) => (
             <div
               key={service.id}
               className={cn(
-                "grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center",
+                "grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-32 items-center",
               )}
             >
               <div
@@ -174,7 +174,7 @@ export default function ServiziPage() {
                 {service.isSlider ? (
                   <ImageSlider images={service.images} />
                 ) : (
-                  <div className="relative h-[500px] md:h-[650px] overflow-hidden rounded-[3rem] border border-white/10 group shadow-2xl bg-zinc-900">
+                  <div className="relative h-[350px] md:h-[650px] overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-white/10 group shadow-2xl bg-zinc-900">
                     {service.image && (
                       <>
                         <Image
@@ -197,31 +197,32 @@ export default function ServiziPage() {
                 )}
               </div>
 
+              {/* Spacing testi ridotto su mobile */}
               <div
                 className={cn(
-                  "space-y-10",
+                  "space-y-6 md:space-y-10",
                   index % 2 !== 0 && "lg:col-start-1 lg:row-start-1",
                 )}
               >
-                <div className="inline-flex p-6 rounded-3xl bg-primary/10 border border-primary/20 text-primary">
-                  <service.icon className="h-14 w-14" />
+                <div className="inline-flex p-4 md:p-6 rounded-2xl md:rounded-3xl bg-primary/10 border border-primary/20 text-primary">
+                  <service.icon className="h-10 w-10 md:h-14 md:w-14" />
                 </div>
-                <div className="space-y-6">
-                  <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-[0.9]">
+                <div className="space-y-4 md:space-y-6">
+                  <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic leading-[0.9]">
                     {service.name}
                   </h2>
-                  <p className="text-2xl text-zinc-400 leading-relaxed font-light">
+                  <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed font-light">
                     {service.description}
                   </p>
                 </div>
                 <Button
                   asChild
                   variant="link"
-                  className="text-primary p-0 text-2xl hover:text-white transition-colors gap-3 italic font-bold"
+                  className="text-primary p-0 text-xl md:text-2xl hover:text-white transition-colors gap-3 italic font-bold h-auto"
                 >
                   <Link href="/contatti" className="group">
                     Richiedi sopralluogo gratuito
-                    <ArrowRight className="h-8 w-8 ml-2 transition-transform group-hover:translate-x-3" />
+                    <ArrowRight className="h-6 w-6 md:h-8 md:w-8 ml-2 transition-transform group-hover:translate-x-3" />
                   </Link>
                 </Button>
               </div>
@@ -229,21 +230,21 @@ export default function ServiziPage() {
           ))}
         </div>
 
-        {/* CTA Finale */}
-        <section className="relative w-full py-32 px-8 mt-60 overflow-hidden rounded-[5rem] border border-white/10 bg-zinc-900/40 backdrop-blur-xl text-center shadow-3xl">
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary/10 blur-[180px] rounded-full pointer-events-none" />
+        {/* CTA Finale ottimizzata */}
+        <section className="relative w-full py-20 md:py-32 px-6 md:px-8 mt-40 md:mt-60 overflow-hidden rounded-[3rem] md:rounded-[5rem] border border-white/10 bg-zinc-900/40 backdrop-blur-xl text-center shadow-3xl">
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 blur-[120px] md:blur-[180px] rounded-full pointer-events-none" />
           
-          <div className="relative z-10 space-y-10">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase italic">
-              Hai un progetto <br />{" "}
-              <span className="text-primary not-italic text-shadow-glow">
+          <div className="relative z-10 space-y-8 md:space-y-10">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic">
+              Hai un progetto <br className="hidden md:block" />{" "}
+              <span className="text-primary not-italic">
                 in mente?
               </span>
             </h2>
             <Button
               asChild
               size="lg"
-              className="h-24 px-20 bg-primary text-zinc-950 hover:bg-white hover:text-black rounded-full text-3xl font-black transition-all shadow-2xl shadow-primary/20 uppercase tracking-tighter transform hover:scale-105"
+              className="h-20 md:h-24 px-12 md:px-20 bg-primary text-zinc-950 hover:bg-white hover:text-black rounded-full text-2xl md:text-3xl font-black transition-all shadow-2xl shadow-primary/20 uppercase tracking-tighter transform hover:scale-105 w-full md:w-auto"
             >
               <Link href="/contatti">Iniziamo ora</Link>
             </Button>
