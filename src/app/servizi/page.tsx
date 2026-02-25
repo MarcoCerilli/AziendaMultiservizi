@@ -129,7 +129,7 @@ export default function ServiziPage() {
     {
       id: "scavi",
       name: "Scavi Terreni",
-      description: "Movimento terra, rimozioni tronchi d'albero e radici, scavi per drenaggi e livellamento del terreno con mezzi propri professionali.",
+      description: "Movimento terra, rimozioni tronchi d'albero e radici, scavi per impianti di irrigazione e livellamento del terreno con mezzi propri professionali.",
       icon: Truck,
       image: placeholderImages.services.scavi,
     },
