@@ -28,9 +28,9 @@ function HeroSection() {
       <div className="relative container mx-auto px-6 z-10 pt-20 lg:pt-0">
         <div className="max-w-7xl space-y-8">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-primary/30">
-              <Star className="h-3 w-3 fill-current" />
-              <span className="ml-1 italic">
+            <div className="inline-flex items-center gap-2 bg-zinc-950/80 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-primary/40 backdrop-blur-md shadow-2xl">
+              <Star className="h-3 w-3 fill-current shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
+              <span className="ml-1 italic tracking-wider">
                 Multiservizi Terracina & Dintorni
               </span>
             </div>
