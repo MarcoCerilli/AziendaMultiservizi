@@ -25,7 +25,7 @@ function HeroSection() {
           <div className="space-y-4">
             {/* Badge Trust per SEO e Conversione */}
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-primary/30">
-              <Star className="h-3 w-3 fill-current" /> Il Numero 1 a Terracina
+              <Star className="h-3 w-3 fill-current" />
             </div>
 
             <h1 className="font-black tracking-tighter text-white uppercase italic leading-[0.95]">
