@@ -59,7 +59,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-primary/30 bg-zinc-950/95 backdrop-blur-xl shadow-2xl">
       {/* Altezza aumentata a h-28 / h-32 */}
       <div className="mx-auto flex h-28 md:h-32 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <div className="flex-shrink-0">
+        <div className="rounded-2xl overflow-hidden bg-zinc-900/40 border border-white/5 p-2 transition-transform hover:scale-105">
           <ZecchiLogo />
         </div>
 

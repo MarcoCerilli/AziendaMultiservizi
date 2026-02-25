@@ -85,6 +85,8 @@ function AboutSection() {
     "Manutenzione Giardini e Aree Verde",
     "Piccoli Scavi e Movimento Terra",
     "Soluzioni Edili e Riparazioni",
+    "Impianti Irrigazione",
+    "Pulizie per Condomini, Residence e Privati",
   ];
 
   return (
