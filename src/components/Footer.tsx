@@ -14,6 +14,7 @@ function ZecchiLogoFooter() {
                 alt="Logo Zecchi" 
                 fill 
                 className="object-contain"
+                unoptimized
             />
         </div>
         <div className="text-center md:text-left">

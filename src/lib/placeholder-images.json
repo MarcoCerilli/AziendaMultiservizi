@@ -1,6 +1,6 @@
 {
   "hero": {
-    "src": "/images/foto.jpeg",
+    "src": "/images/foto3.jpeg",
     "hint": "Giardino curato Zecchi Multiservizi"
   },
   "about1": {
@@ -21,36 +21,40 @@
   },
   "services": {
     "giardinaggio": {
-      "src": "/images/foto5.jpeg",
-      "hint": "Manutenzione giardini"
+      "images": [
+        { "src": "/images/foto3.jpeg", "hint": "Giardino curato" },
+        { "src": "/images/foto5.jpeg", "hint": "Manutenzione giardini" },
+        { "src": "/images/foto2.jpeg", "hint": "Dettaglio verde" },
+        { "src": "/images/foto.jpeg", "hint": "Prato curato" },
+        { "src": "/images/foto4.jpeg", "hint": "Albero con Aiuola" }
+      ]
     },
     "puliziaTerreni": {
       "src": "/images/foto6.jpeg",
       "hint": "Pulizia e decespugliamento"
     },
     "taglioPiante": {
-      "src": "/images/foto7.jpeg",
+      "src": "/images/foto12.png",
       "hint": "Abbattimento e potatura"
     },
     "pulizieCondomini": {
-      "src": "/images/foto8.jpeg",
+      "src": "/images/foto13.png",
       "hint": "Servizi condominiali"
     },
     "lavoriEdili": {
-      "src": "/images/",
-      "hint": "Ristrutturazioni e riparazioni"
+      "images": [
+        { "src": "/images/foto9.jpeg", "hint": "Ristrutturazione" },
+        { "src": "/images/foto6.jpeg", "hint": "Intervento edile" },
+        { "src": "/images/foto7.jpeg", "hint": "Finiture" }
+      ]
     },
     "scavi": {
       "src": "/images/foto10.jpeg",
       "hint": "Movimento terra e scavi"
     },
     "impiantiIrrigazione": {
-      "src": "/images/foto1.jpeg",
+      "src": "/images/foto11.jpeg",
       "hint": "Sistemi di irrigazione"
-    },
-    "taglioSiepi": {
-      "src": "/images/foto2.jpeg",
-      "hint": "Sagomatura siepi"
     }
   }
 }

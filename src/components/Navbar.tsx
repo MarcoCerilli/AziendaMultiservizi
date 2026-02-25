@@ -30,6 +30,7 @@ function ZecchiLogo() {
           fill
           priority
           className="object-contain"
+          unoptimized
         />
       </div>
       <div className="flex flex-col justify-center">

@@ -10,28 +10,39 @@ import { LeadPopup } from '@/components/LeadPopup';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Zecchi Soluzioni - Giardinaggio, Pulizie, Edilizia a Pistoia',
-    template: '%s | Zecchi Soluzioni',
+    // Sostituito Pistoia con Terracina e reso più incisivo
+    default: 'Zecchi Multiservizi | Giardinaggio, Scavi ed Edilizia a Terracina',
+    template: '%s | Zecchi Multiservizi',
   },
-  description: 'Zecchi Soluzioni offre servizi professionali di giardinaggio, pulizia condomini, piccoli lavori edili, taglio piante e scavi a Pistoia e provincia. Contattaci per un preventivo gratuito.',
-  keywords: 'giardinaggio, pulizie, edilizia, pistoia, zecchi monica, taglio siepi, scavi, manutenzione giardini, potatura, impianti irrigazione',
+  description: 'Zecchi Monica e Fabio: specialisti in potature alto fusto, manutenzione giardini, scavi e piccoli lavori edili a Terracina. Soluzioni definitive per privati e condomini.',
+  keywords: 'giardinaggio Terracina, potatura alto fusto Terracina, scavi Terracina, manutenzione giardini, pulizia condomini Terracina, Zecchi Monica, Zecchi Fabio, lavori edili Terracina, impianti irrigazione',
+  // Aggiunto per migliorare l'anteprima sui social
+  openGraph: {
+    title: 'Zecchi Multiservizi Terracina',
+    description: 'Professionalità e cura nel giardinaggio e nell\'edilizia.',
+    type: 'website',
+    locale: 'it_IT',
+  },
 };
 
-// app/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className="dark">
+    <html lang="it" className="dark" style={{ colorScheme: 'dark' }}>
       <body className={cn('font-body antialiased min-h-screen bg-background flex flex-col')}>
         <Navbar />
-        <main className="flex-1 relative"> {/* Aggiunto relative qui */}
+        
+        {/* Il main flex-1 assicura che il footer stia sempre in fondo */}
+        <main className="flex-1 relative"> 
           {children}
         </main>
+        
         <Footer />
         
-        {/* L'ordine conta: l'ultimo ha spesso la priorità visiva */}
+        {/* Widget flottanti */}
         <AiAssistant /> 
         <WhatsAppButton /> 
         
+        {/* Componenti di utilità */}
         <Toaster />
         <LeadPopup />
       </body>

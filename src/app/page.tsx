@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import placeholderImages from "@/lib/placeholder-images.json";
@@ -7,25 +9,30 @@ import { ArrowRight, Check, Star } from "lucide-react";
 function HeroSection() {
   return (
     <section className="relative w-full min-h-[90vh] lg:h-[85vh] flex items-center overflow-hidden">
-      {/* Background Image con overlay dinamico */}
+      {/* Background Image con fix inquadratura e luminosità */}
       <div className="absolute inset-0">
         <Image
           src={placeholderImages.hero.src}
           alt="Giardino curato Zecchi Multiservizi"
           fill
           className="object-cover scale-105 animate-in fade-in duration-1000"
+          style={{ objectPosition: "50% 25%" }} // Centra meglio il soggetto senza tagliare troppo
           priority
+          unoptimized
         />
-        {/* Overlay Responsive: Da verticale (mobile) a orizzontale (desktop) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent lg:bg-gradient-to-r lg:from-zinc-950 lg:via-zinc-950/70 lg:to-transparent" />
+
+        {/* Overlay più chiaro: ridotto l'opacità dei neri */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/40 to-transparent lg:bg-gradient-to-r lg:from-zinc-950/90 lg:via-zinc-950/30 lg:to-transparent" />
       </div>
 
       <div className="relative container mx-auto px-6 z-10 pt-20 lg:pt-0">
         <div className="max-w-7xl space-y-8">
           <div className="space-y-4">
-            {/* Badge Trust per SEO e Conversione */}
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-primary/30">
               <Star className="h-3 w-3 fill-current" />
+              <span className="ml-1 italic">
+                Multiservizi Terracina & Dintorni
+              </span>
             </div>
 
             <h1 className="font-black tracking-tighter text-white uppercase italic leading-[0.95]">
@@ -37,7 +44,7 @@ function HeroSection() {
               </span>
             </h1>
 
-            <p className="max-w-[650px] text-zinc-300 text-lg md:text-2xl leading-relaxed">
+            <p className="max-w-[650px] text-zinc-300 text-lg md:text-2xl leading-relaxed font-light">
               Dalle grandi potature agli scavi edili.{" "}
               <span className="text-white font-bold">
                 Zecchi Monica e Fabio
@@ -51,7 +58,7 @@ function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="h-16 px-10 text-xl rounded-full font-black shadow-2xl shadow-primary/40 bg-primary hover:bg-white hover:text-primary transition-all uppercase tracking-tighter"
+              className="h-16 px-10 text-xl rounded-full font-black shadow-2xl shadow-primary/40 bg-primary hover:bg-white hover:text-black transition-all uppercase tracking-tighter"
             >
               <Link href="/servizi">
                 I Nostri Servizi <ArrowRight className="ml-2 h-6 w-6" />
@@ -85,36 +92,35 @@ function AboutSection() {
       id="chi-siamo"
       className="relative w-full py-24 lg:py-32 overflow-hidden bg-zinc-950"
     >
-      {/* RIMOSSO: Pattern SVG a trama.
-          AGGIUNTO: Un bagliore radiale soffuso per dare profondità 
-      */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none z-0" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid gap-20 lg:grid-cols-2 items-center">
-          {/* Griglia Immagini Moderna - Invariata (Puntano ai tuoi .jpeg) */}
+          {/* Griglia Immagini Moderna */}
           <div className="relative h-[500px] md:h-[600px]">
-            <div className="absolute top-0 left-0 w-4/5 h-[80%] overflow-hidden rounded-[2rem] shadow-2xl border border-white/10 z-20">
+            <div className="absolute top-0 left-0 w-4/5 h-[80%] overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10 z-20">
               <Image
                 src={placeholderImages.about1.src}
-                alt="Lavoro professionale"
+                alt="Lavoro professionale Zecchi"
                 fill
-                className="object-cover"
+                className="object-cover object-top" // AGGIUNTO: object-top
+                unoptimized
               />
             </div>
-            <div className="absolute bottom-0 right-0 w-3/5 h-[60%] overflow-hidden rounded-[2rem] shadow-2xl border border-primary/20 z-30">
+            <div className="absolute bottom-0 right-0 w-3/5 h-[60%] overflow-hidden rounded-[2.5rem] shadow-2xl border border-primary/20 z-30">
               <Image
                 src={placeholderImages.about2.src}
-                alt="Dettaglio scavi"
+                alt="Dettaglio intervento tecnico"
                 fill
-                className="object-cover"
+                className="object-cover object-top" // AGGIUNTO: object-top
+                unoptimized
               />
-              <div className="absolute inset-0 bg-primary/10 backdrop-blur-[1px] hover:backdrop-blur-0 transition-all duration-500" />
+              <div className="absolute inset-0 bg-primary/5 backdrop-blur-[1px] hover:backdrop-blur-0 transition-all duration-500" />
             </div>
 
             {/* Box Esperienza */}
-            <div className="absolute -bottom-6 -left-6 bg-primary p-8 rounded-3xl z-40 shadow-2xl rotate-[-5deg] hidden md:block">
-              <p className="text-black font-black text-3xl leading-none uppercase tracking-tighter">
+            <div className="absolute -bottom-6 -left-6 bg-primary p-8 rounded-3xl z-40 shadow-2xl rotate-[-3deg] hidden md:block">
+              <p className="text-zinc-950 font-black text-3xl leading-none uppercase tracking-tighter">
                 15+ ANNI
                 <br />
                 <span className="text-white">DI ESPERIENZA</span>
@@ -134,12 +140,12 @@ function AboutSection() {
                   la cura dei dettagli.
                 </span>
               </h2>
-              <p className="text-zinc-400 text-xl leading-relaxed">
+              <p className="text-zinc-400 text-xl leading-relaxed font-light">
                 Nata dalla sinergia tra{" "}
                 <span className="text-white font-bold">Monica e Fabio</span>,
                 Zecchi Multiservizi unisce la precisione del giardinaggio alla
                 robusta esperienza negli interventi edili. Trattiamo ogni
-                proprietà come se fosse la nostra.
+                proprietà a Terracina come se fosse la nostra.
               </p>
             </div>
 
@@ -147,9 +153,9 @@ function AboutSection() {
               {features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-4 bg-white/[0.03] p-5 rounded-2xl border border-white/10 hover:border-primary/50 transition-all group"
+                  className="flex items-center gap-4 bg-white/[0.03] p-5 rounded-2xl border border-white/10 hover:border-primary/50 transition-all group shadow-sm"
                 >
-                  <div className="bg-primary p-1 rounded-full text-black group-hover:scale-110 transition-transform">
+                  <div className="bg-primary p-1.5 rounded-full text-zinc-950 group-hover:scale-110 transition-transform">
                     <Check className="h-4 w-4 stroke-[4px]" />
                   </div>
                   <span className="text-base font-bold text-zinc-200 uppercase tracking-tight">
@@ -162,9 +168,9 @@ function AboutSection() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto h-16 px-10 bg-white text-black hover:bg-primary hover:text-white font-black rounded-full transition-all text-xl uppercase tracking-tighter"
+              className="w-full sm:w-auto h-16 px-10 bg-white text-zinc-950 hover:bg-primary hover:text-white font-black rounded-full transition-all text-xl uppercase tracking-tighter"
             >
-              <Link href="/contatti" className="flex items-center">
+              <Link href="/contatti">
                 Inizia il tuo Progetto <ArrowRight className="ml-2 h-6 w-6" />
               </Link>
             </Button>

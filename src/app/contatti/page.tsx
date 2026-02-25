@@ -125,6 +125,7 @@ export default function ContattiPage() {
                 alt="Contatti Zecchi Multiservizi"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
               
