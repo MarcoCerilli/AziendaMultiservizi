@@ -28,7 +28,7 @@ export default function ContattiPage() {
         <div className="container relative mx-auto px-6">
           <div className="max-w-4xl space-y-6 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-primary/30">
-              <Star className="h-3 w-3 fill-current" /> Sempre Operativi 24/7
+              <Star className="h-3 w-3 fill-current" /> Affidati a Zecchi Multiservizi
             </div>
             <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]">
               Siamo al tuo <br />
