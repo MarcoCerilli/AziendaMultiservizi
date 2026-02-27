@@ -19,18 +19,30 @@ export function WhatsAppButton() {
     async function fetchPhone() {
       try {
         const contactInfo = await getContactInfo();
-        if (contactInfo?.phoneMonica) setPhone(contactInfo.phoneMonica);
-      } catch (error) { console.error("Errore fetch WhatsApp:", error); }
+        if (contactInfo?.phoneMonica) {
+          // 1. Rimuoviamo tutto ciò che non è un numero
+          let cleanNumber = contactInfo.phoneMonica.replace(/\D/g, "");
+          
+          // 2. Se il numero NON inizia con 39, lo aggiungiamo forzatamente
+          if (!cleanNumber.startsWith("39")) {
+            cleanNumber = `39${cleanNumber}`;
+          }
+          
+          setPhone(cleanNumber);
+        }
+      } catch (error) {
+        console.error("Errore fetch WhatsApp:", error);
+      }
     }
     fetchPhone();
   }, []);
 
-  const whatsappLink = `https://wa.me/${phone.replace(/\D/g, "")}`;
+  // Il link ora userà sempre il numero con prefisso internazionale pulito
+  const whatsappLink = `https://wa.me/${phone}`;
 
   return (
-    /* Posizione SOPRA l'AI (bottom-24 o bottom-[100px]) */
     <div className="fixed bottom-24 right-6 z-[9999]">
-      {/* Pulse esterno più evidente */}
+      {/* Pulse esterno */}
       <span className="absolute inset-0 inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-25"></span>
       
       <Button
@@ -38,7 +50,6 @@ export function WhatsAppButton() {
         className="relative h-14 w-14 rounded-full bg-[#25D366] p-0 shadow-2xl hover:bg-[#128C7E] transition-all hover:scale-110 border-none flex items-center justify-center overflow-hidden"
       >
         <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
-          {/* h-10 w-10 con scale-125 elimina quasi tutto il padding verde interno */}
           <WhatsAppSVGIcon className="h-10 w-10 scale-[1.3] text-white" /> 
         </Link>
       </Button>
