@@ -13,7 +13,7 @@ const WhatsAppSVGIcon = ({ className }: { className?: string }) => (
 );
 
 export function WhatsAppButton() {
-  const [phone, setPhone] = useState("3404962500");
+  const [phone, setPhone] = useState("393404962500");
 
   useEffect(() => {
     async function fetchPhone() {
