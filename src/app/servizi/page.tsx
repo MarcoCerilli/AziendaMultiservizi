@@ -45,7 +45,7 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
             src={img.src}
             alt={img.hint}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             unoptimized
           />
           <div className="absolute inset-0 bg-black/20" />
@@ -76,70 +76,70 @@ export default function ServiziPage() {
     {
       id: "giardini",
       name: "Manutenzione Giardini",
-      description:
-        "Progettazione e cura costante del verde. Trasformiamo il tuo spazio esterno in un angolo di paradiso curato nei minimi dettagli.",
+      description: "Progettazione e cura costante del verde. Trasformiamo il tuo spazio esterno in un angolo di paradiso.",
       icon: Sprout,
       isSlider: true,
       images: placeholderImages.services.giardinaggio.images,
+      position: "object-center"
     },
     {
       id: "potature",
       name: "Potatura Alto Fusto",
-      description:
-        "Interventi specializzati in sicurezza per la potatura e l'abbattimento di alberi ad alto fusto mediante tecniche avanzate.",
+      description: "Interventi specializzati in sicurezza per la potatura e l'abbattimento di alberi ad alto fusto.",
       icon: TreePine,
       image: placeholderImages.services.taglioPiante,
+      position: "object-top" // Punta in ALTO per vedere le chiome
     },
     {
       id: "pulizie",
       name: "Pulizie e Igiene",
-      description:
-        "Igienizzazione e manutenzione ordinaria per aree comuni condominiali, uffici e residenze private a Terracina.",
+      description: "Igienizzazione e manutenzione ordinaria per condomini, uffici e residenze private.",
       icon: Building,
       image: placeholderImages.services.pulizieCondomini,
+      position: "object-center"
     },
     {
       id: "edilizia",
       name: "Piccoli Lavori Edili",
-      description:
-        "Riparazioni, muratura leggera e manutenzioni per interni ed esterni. Soluzioni rapide, pulite e garantite.",
+      description: "Riparazioni, muratura leggera e rifacimento vialetti. Soluzioni rapide e pulite.",
       icon: Building2,
       isSlider: true,
       images: placeholderImages.services.lavoriEdili.images,
+      position: "object-center"
     },
     {
       id: "scavi",
       name: "Scavi e Terreni",
-      description:
-        "Movimento terra, rimozione radici e livellamento del terreno con mezzi propri professionali.",
+      description: "Movimento terra, rimozione radici e livellamento con mezzi propri professionali.",
       icon: Truck,
       image: placeholderImages.services.scavi,
+      position: "object-bottom" // Punta in BASSO per vedere lo scavo a terra
     },
     {
       id: "irrigazione",
       name: "Impianti Irrigazione",
-      description:
-        "Sistemi automatici a risparmio idrico per mantenere il tuo prato sempre rigoglioso senza sprechi.",
+      description: "Sistemi automatici a risparmio idrico per un prato sempre rigoglioso.",
       icon: Droplets,
       image: placeholderImages.services.impiantiIrrigazione,
+      position: "object-center"
     },
   ];
 
   return (
     <div className="bg-zinc-950 min-h-screen text-white pb-20">
       <div className="container mx-auto max-w-6xl px-6 py-16 md:py-24">
+        
         {/* Header bilanciato */}
         <div className="text-center mb-24 space-y-4">
           <h1 className="text-4xl md:text-7xl font-black tracking-tight uppercase">
             I Nostri <span className="text-primary italic">Servizi</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
-            Zecchi Monica e Fabio: eccellenza artigiana per il tuo verde e la
-            tua casa a Terracina.
+          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto font-light italic">
+            Zecchi Monica e Fabio: eccellenza artigiana a Terracina.
           </p>
         </div>
 
-        {/* Griglia Servizi - Spaziature ridotte */}
+        {/* Griglia Servizi */}
         <div className="space-y-24 md:space-y-40">
           {SERVICES_DATA.map((service, index) => (
             <div
@@ -161,7 +161,10 @@ export default function ServiziPage() {
                         src={service.image.src}
                         alt={service.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className={cn(
+                          "object-cover transition-transform duration-700 group-hover:scale-105",
+                          service.position // Applica la posizione specifica (top, center, bottom)
+                        )}
                         unoptimized
                       />
                     )}
@@ -179,17 +182,17 @@ export default function ServiziPage() {
                   <service.icon className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
                 <div className="space-y-3">
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight uppercase">
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight uppercase leading-none">
                     {service.name}
                   </h2>
-                  <p className="text-lg text-zinc-400 leading-relaxed">
+                  <p className="text-lg text-zinc-400 leading-relaxed font-light">
                     {service.description}
                   </p>
                 </div>
                 <Button
                   asChild
                   variant="link"
-                  className="text-primary p-0 text-lg hover:text-white gap-2 h-auto font-bold"
+                  className="text-primary p-0 text-lg hover:text-white gap-2 h-auto font-bold uppercase tracking-tighter"
                 >
                   <Link href="/contatti" className="group">
                     Richiedi sopralluogo
@@ -201,8 +204,8 @@ export default function ServiziPage() {
           ))}
         </div>
 
-        {/* CTA Finale più sobria */}
-        <section className="mt-40 p-12 md:p-20 rounded-[2.5rem] border border-white/10 bg-zinc-900/40 backdrop-blur-md text-center relative overflow-hidden">
+        {/* CTA Finale */}
+        <section className="mt-40 p-10 md:p-20 rounded-[2.5rem] border border-white/10 bg-zinc-900/40 backdrop-blur-md text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -z-10" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight">
@@ -215,7 +218,7 @@ export default function ServiziPage() {
             <Button
               asChild
               size="lg"
-              className="bg-primary text-zinc-950 hover:bg-white rounded-full px-10 py-6 text-xl font-bold transition-all"
+              className="bg-primary text-zinc-950 hover:bg-white rounded-full px-10 py-7 text-xl font-bold transition-all shadow-xl"
             >
               <Link href="/contatti">Parliamone ora</Link>
             </Button>
