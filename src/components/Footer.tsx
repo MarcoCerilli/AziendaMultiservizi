@@ -40,7 +40,7 @@ export function Footer() {
             <ZecchiLogoFooter />
             <div className="space-y-4 text-center lg:text-left">
               <p className="text-zinc-400 text-lg leading-relaxed max-w-md">
-                Leader nel settore multiservizi a <span className="text-white font-bold">Terracina e Provincia</span>. Dal giardinaggio professionale all'edilizia di qualità.
+               Azienda di multiservizi a <span className="text-white font-bold">Terracina e Provincia</span>. Dal giardinaggio professionale all'edilizia di qualità.
               </p>
               {/* Dati estratti dall'immagine */}
               <div className="pt-4 border-t border-white/5 space-y-2 text-zinc-500 text-xs uppercase tracking-widest font-medium">
