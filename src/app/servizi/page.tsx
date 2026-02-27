@@ -54,7 +54,7 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
             src={img.src}
             alt={img.hint}
             fill
-            className="object-contain p-2 md:p-4" 
+            className="object-contain p-2 md:p-4"
             unoptimized
           />
         </div>
@@ -79,12 +79,14 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
 
           <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3 z-20">
             {images.map((_, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className={cn(
-                  "h-1 md:h-1.5 rounded-full transition-all duration-300", 
-                  i === current ? "bg-primary w-8 md:w-10" : "bg-white/20 w-3 md:w-4"
-                )} 
+                  "h-1 md:h-1.5 rounded-full transition-all duration-300",
+                  i === current
+                    ? "bg-primary w-8 md:w-10"
+                    : "bg-white/20 w-3 md:w-4",
+                )}
               />
             ))}
           </div>
@@ -99,7 +101,8 @@ export default function ServiziPage() {
     {
       id: "giardini",
       name: "Creazione e Manutenzione Giardini",
-      description: "Dalla progettazione alla cura costante. Trasformiamo il tuo spazio esterno in un angolo di paradiso curato nei minimi dettagli.",
+      description:
+        "Dalla progettazione alla cura costante. Trasformiamo il tuo spazio esterno in un angolo di paradiso curato nei minimi dettagli.",
       icon: Sprout,
       isSlider: true,
       images: placeholderImages.services.giardinaggio.images,
@@ -107,21 +110,24 @@ export default function ServiziPage() {
     {
       id: "potature",
       name: "Taglio e Potatura Alto Fusto",
-      description: "Interventi specializzati in sicurezza per la potatura e l'abbattimento di alberi ad alto fusto mediante tecniche avanzate.",
+      description:
+        "Interventi specializzati in sicurezza per la potatura e l'abbattimento di alberi ad alto fusto mediante tecniche avanzate.",
       icon: TreePine,
       image: placeholderImages.services.taglioPiante,
     },
     {
       id: "pulizie",
       name: "Pulizie Condomini e Privati",
-      description: "Igienizzazione e manutenzione ordinaria/straordinaria per aree comuni condominiali, uffici e residenze private.",
+      description:
+        "Igienizzazione e manutenzione ordinaria/straordinaria per aree comuni condominiali, uffici e residenze private.",
       icon: Building,
       image: placeholderImages.services.pulizieCondomini,
     },
     {
       id: "edilizia",
       name: "Piccoli Lavori Edili",
-      description: "Riparazioni, muratura leggera, rifacimento vialetti e manutenzioni edili per interni ed esterni. Soluzioni rapide e garantite.",
+      description:
+        "Riparazioni, muratura leggera, rifacimento vialetti e manutenzioni edili per interni ed esterni. Soluzioni rapide e garantite.",
       icon: Building2,
       isSlider: true,
       images: placeholderImages.services.lavoriEdili.images,
@@ -129,14 +135,16 @@ export default function ServiziPage() {
     {
       id: "scavi",
       name: "Scavi Terreni",
-      description: "Movimento terra, rimozioni tronchi d'albero e radici, scavi per impianti di irrigazione e livellamento del terreno con mezzi propri professionali.",
+      description:
+        "Movimento terra, rimozioni tronchi d'albero e radici, scavi per impianti di irrigazione e livellamento del terreno con mezzi propri professionali.",
       icon: Truck,
       image: placeholderImages.services.scavi,
     },
     {
       id: "irrigazione",
       name: "Impianti di Irrigazione",
-      description: "Progettazione e installazione di sistemi automatici a risparmio idrico per mantenere il tuo verde sempre rigoglioso.",
+      description:
+        "Progettazione e installazione di sistemi automatici a risparmio idrico per mantenere il tuo verde sempre rigoglioso.",
       icon: Droplets,
       image: placeholderImages.services.impiantiIrrigazione,
     },
@@ -145,14 +153,14 @@ export default function ServiziPage() {
   return (
     <div className="bg-zinc-950 min-h-screen text-white">
       <div className="container mx-auto max-w-screen-xl px-6 py-12 md:py-24">
-        
         {/* Header ridotto su mobile */}
         <div className="text-center mb-20 md:mb-40 space-y-4 md:space-y-6">
           <h1 className="text-5xl md:text-9xl font-black tracking-tighter uppercase italic leading-none">
             I Nostri <span className="text-primary not-italic">Servizi</span>
           </h1>
           <p className="text-zinc-400 text-lg md:text-2xl max-w-3xl mx-auto italic font-light">
-            Zecchi Monica e Fabio: l’eccellenza artigiana al servizio del tuo verde a Terracina.
+            Zecchi Monica e Fabio: l’eccellenza artigiana al servizio del tuo
+            verde a Terracina.
           </p>
         </div>
 
@@ -232,21 +240,56 @@ export default function ServiziPage() {
 
         {/* CTA Finale ottimizzata */}
         <section className="relative w-full py-20 md:py-32 px-6 md:px-8 mt-40 md:mt-60 overflow-hidden rounded-[3rem] md:rounded-[5rem] border border-white/10 bg-zinc-900/40 backdrop-blur-xl text-center shadow-3xl">
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 blur-[120px] md:blur-[180px] rounded-full pointer-events-none" />
-          
-          <div className="relative z-10 space-y-8 md:space-y-10">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic">
-              Hai un progetto <br className="hidden md:block" />{" "}
-              <span className="text-primary not-italic">
-                in mente?
+          {/* Glow decorativo migliorato */}
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/20 blur-[120px] md:blur-[180px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+
+          <div className="relative z-10 max-w-4xl mx-auto space-y-10">
+            {/* Badge superiore */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-widest">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
+              Sempre operativi a Terracina
+            </div>
+
+            {/* Titolo Principale */}
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic leading-[0.9]">
+              Pronto a trasformare <br className="hidden md:block" />{" "}
+              <span className="text-primary not-italic">i tuoi spazi?</span>
             </h2>
+
+            {/* Contenuto Aggiuntivo (Descrizione) */}
+            <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+              Dalla manutenzione del verde alle pulizie industriali, fino alle
+              ristrutturazioni chiavi in mano. Mettiamo la nostra esperienza al
+              servizio della tua casa o della tua azienda.
+            </p>
+
+            {/* Griglia rapida benefici/servizi */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-white/60 text-sm font-bold uppercase tracking-tighter pb-4">
+              <div className="flex items-center justify-center gap-2">
+                <div className="h-1 w-1 bg-primary rounded-full" /> Preventivi
+                Gratuiti
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <div className="h-1 w-1 bg-primary rounded-full" /> Interventi
+                Rapidi
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <div className="h-1 w-1 bg-primary rounded-full" /> Qualità
+                Certificata
+              </div>
+            </div>
+
+            {/* Bottone CTA */}
             <Button
               asChild
               size="lg"
               className="h-20 md:h-24 px-12 md:px-20 bg-primary text-zinc-950 hover:bg-white hover:text-black rounded-full text-2xl md:text-3xl font-black transition-all shadow-2xl shadow-primary/20 uppercase tracking-tighter transform hover:scale-105 w-full md:w-auto"
             >
-              <Link href="/contatti">Iniziamo ora</Link>
+              <Link href="/contatti">Parliamone ora</Link>
             </Button>
           </div>
         </section>
