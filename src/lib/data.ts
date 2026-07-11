@@ -30,7 +30,7 @@ const serviceDetails = [
     name: "Giardinaggio (pubblico/privato)",
     description:
       "Progettiamo, realizziamo e manteniamo giardini e aree verdi, sia per clienti privati che per enti pubblici, con passione e professionalità.",
-    image: placeholderImages.services.giardinaggio,
+    image: placeholderImages.services.giardinaggio.images[0],
   },
   {
     name: "Pulizia terreni",
@@ -54,7 +54,7 @@ const serviceDetails = [
     name: "Piccoli lavori edili",
     description:
       "Realizziamo piccoli interventi di muratura, ristrutturazioni e manutenzioni edili per la tua casa o il tuo giardino.",
-    image: placeholderImages.services.lavoriEdili,
+    image: placeholderImages.services.lavoriEdili.images[0],
   },
   {
     name: "Scavi",
@@ -115,12 +115,9 @@ export async function getServices(): Promise<Service[]> {
         .split(" ")[0]
         .toLowerCase()
         .replace(/[^a-z]/g, "");
-      const serviceImages = placeholderImages.services as Record<
-        string,
-        { src: string; hint: string }
-      >;
-      const image =
-        serviceImages[imageKey] || placeholderImages.services.giardinaggio;
+      const serviceImages = placeholderImages.services as Record<string, any>;
+      const matched = serviceImages[imageKey];
+      const image = matched?.images ? matched.images[0] : (matched || placeholderImages.services.giardinaggio.images[0]);
 
       return {
         id: doc.id,

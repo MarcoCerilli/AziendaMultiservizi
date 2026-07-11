@@ -77,6 +77,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="it" className="dark" style={{ colorScheme: 'dark' }}>
       <body className={cn('font-body antialiased min-h-screen bg-background flex flex-col')}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HomeAndConstructionBusiness",
+              "name": "Zecchi Multiservizi",
+              "image": "https://zecchimultiservizi.it/og-image.jpg",
+              "@id": "https://zecchimultiservizi.it",
+              "url": "https://zecchimultiservizi.it",
+              "telephone": "+393404962500",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Via C. Fusco, 4",
+                "addressLocality": "Terracina",
+                "postalCode": "04019",
+                "addressRegion": "LT",
+                "addressCountry": "IT"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.2842,
+                "longitude": 13.2458
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              }
+            })
+          }}
+        />
         {/* Navigazione */}
         <Navbar />
         

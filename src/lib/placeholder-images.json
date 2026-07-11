@@ -55,6 +55,10 @@
     "impiantiIrrigazione": {
       "src": "/images/foto11.jpeg",
       "hint": "Sistemi di irrigazione"
+    },
+    "taglioSiepi": {
+      "src": "/images/foto14.png",
+      "hint": "Taglio e potatura siepi"
     }
   }
 }

@@ -55,12 +55,14 @@ function ImageSlider({ images }: { images: { src: string; hint: string }[] }) {
         <>
           <button
             onClick={prev}
+            aria-label="Immagine precedente"
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full hover:bg-primary hover:text-black opacity-0 group-hover:opacity-100 transition-all text-white z-20"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             onClick={next}
+            aria-label="Immagine successiva"
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full hover:bg-primary hover:text-black opacity-0 group-hover:opacity-100 transition-all text-white z-20"
           >
             <ChevronRight className="h-6 w-6" />
