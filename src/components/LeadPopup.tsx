@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { X, Gift, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 
 export function LeadPopup() {
   const [isVisible, setIsVisible] = useState(false);
