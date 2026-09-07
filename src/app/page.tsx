@@ -18,7 +18,6 @@ function HeroSection() {
           className="object-cover scale-105 animate-in fade-in duration-1000"
           style={{ objectPosition: "50% 25%" }} // Centra meglio il soggetto senza tagliare troppo
           priority
-          unoptimized
         />
 
         {/* Overlay più chiaro: ridotto l'opacità dei neri */}
@@ -106,7 +105,6 @@ function AboutSection() {
                 alt="Lavoro professionale Zecchi"
                 fill
                 className="object-cover object-top" // AGGIUNTO: object-top
-                unoptimized
               />
             </div>
             <div className="absolute bottom-0 right-0 w-3/5 h-[60%] overflow-hidden rounded-[2.5rem] shadow-2xl border border-primary/20 z-30">
@@ -115,7 +113,6 @@ function AboutSection() {
                 alt="Dettaglio intervento tecnico"
                 fill
                 className="object-cover object-top" // AGGIUNTO: object-top
-                unoptimized
               />
               <div className="absolute inset-0 bg-primary/5 backdrop-blur-[1px] hover:backdrop-blur-0 transition-all duration-500" />
             </div>
