@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    /* Sfondo leggermente più profondo per far risaltare il verde */
-    --background: 140 12% 7%; 
-    --foreground: 0 0% 98%;
+    /* Verde foresta profondo al posto del nero piatto */
+    --background: 148 24% 8%; 
+    --foreground: 120 10% 97%;
     
-    --card: 140 10% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 148 20% 11%;
+    --card-foreground: 120 10% 97%;
     
-    --popover: 140 12% 9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 148 22% 10%;
+    --popover-foreground: 120 10% 97%;
     
     /* Il tuo iconico verde Zecchi */
     --primary: 100 68% 45%; 
     --primary-foreground: 100 25% 10%;
     
     /* Secondari e bordi leggermente più chiari per definire le forme */
-    --secondary: 140 10% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 148 16% 16%;
+    --secondary-foreground: 120 10% 97%;
     
-    --muted: 140 10% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 148 16% 16%;
+    --muted-foreground: 140 8% 66%;
     
     --accent: 110 82% 68%; 
     --accent-foreground: 110 25% 10%;
@@ -32,19 +32,17 @@
     --destructive-foreground: 0 0% 98%;
     
     /* Bordi più visibili ma eleganti */
-    --border: 140 10% 18%;
-    --input: 140 10% 18%;
+    --border: 148 15% 19%;
+    --input: 148 15% 19%;
     --ring: 100 68% 45%;
     
-    --radius: 0.75rem; /* Arrotondamento più moderno */
+    --radius: 0.75rem;
   }
 
-  /* Rimuovo la duplicazione .dark se il tema è sempre scuro, 
-     altrimenti mantengo la coerenza */
   .dark {
-    --background: 140 12% 7%;
-    --foreground: 0 0% 98%;
-    --border: 140 10% 18%;
+    --background: 148 24% 8%;
+    --foreground: 120 10% 97%;
+    --border: 148 15% 19%;
   }
 }
 
@@ -79,6 +77,23 @@
   /* Utility per rendere i popover più "vetrosi" */
   .glass-effect {
     @apply bg-background/80 backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)];
+  }
+
+  /* Superficie card scura moderna con leggero highlight superiore */
+  .surface-card {
+    @apply bg-[#15221a]/80 backdrop-blur-md border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06),0_12px_30px_-15px_rgba(0,0,0,0.6)];
+  }
+
+  /* Superficie chiara per alternare le sezioni ed evitare il "tutto nero" */
+  .surface-light-card {
+    @apply bg-white border border-emerald-950/10 shadow-[0_8px_24px_-12px_rgba(16,25,20,0.12)];
+  }
+
+  /* Pattern a griglia sottile per dare profondità agli sfondi scuri */
+  .bg-subtle-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 }
 

@@ -41,7 +41,7 @@ export function WhatsAppButton() {
   const whatsappLink = `https://wa.me/${phone}`;
 
   return (
-    <div className="fixed bottom-24 right-6 z-[9999]">
+    <div className="fixed bottom-36 right-4 md:bottom-24 md:right-6 z-40">
       {/* Pulse esterno */}
       <span className="absolute inset-0 inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-25"></span>
       

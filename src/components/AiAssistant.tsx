@@ -87,7 +87,7 @@ export function AiAssistant() {
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40">
           {/* EFFETTO PULSE AI: Colore Ciano/Azzurro per distinguersi da WhatsApp */}
           {!isOpen && (
             <div className="absolute inset-0 rounded-full bg-cyan-500/40 animate-pulse scale-125 blur-md" />

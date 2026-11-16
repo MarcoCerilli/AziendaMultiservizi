@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, FileText, Star } from 'lucide-react';
+import { Mail, Phone, MapPin, FileText, Sparkles, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,10 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const metadata = {
   title: 'Contatti e Preventivi Gratuiti - Zecchi Multiservizi',
   description: 'Contatta Zecchi Multiservizi a Terracina per un preventivo gratuito. Chiama Monica o Fabio per giardinaggio professionale, scavi ed edilizia.',
+  alternates: {
+    canonical: '/contatti',
+  },
 };
 
 export default function ContattiPage() {
-  // Dati aggiornati dal timbro e dalla tua richiesta
   const contactData = {
     monica: "+39 340 496 2500",
     fabio: "+39 333 389 5067",
@@ -20,120 +22,160 @@ export default function ContattiPage() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-zinc-950">
-      {/* --- HERO SECTION --- */}
-      <section className="relative w-full py-16 md:py-32 overflow-hidden border-b border-white/5">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        
-        <div className="container relative mx-auto px-6">
-          <div className="max-w-4xl space-y-6 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-primary/30">
-              <Star className="h-3 w-3 fill-current" /> Affidati a Zecchi Multiservizi
+    <div className="flex flex-col w-full bg-[#f4f7f3] text-[#111c16]">
+      {/* Header */}
+      <section className="relative w-full pt-28 pb-12 md:pt-32 md:pb-16 overflow-hidden border-b border-white/[0.08] bg-[#0e1712] text-white bg-subtle-grid">
+        <div className="absolute -top-24 -right-24 w-80 h-80 bg-primary/15 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="container relative mx-auto max-w-6xl px-4 sm:px-6 z-10">
+          <div className="max-w-2xl space-y-4 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 bg-primary/15 text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/30">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Affidati a Zecchi Multiservizi</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]">
-              Siamo al tuo <br />
-              <span className="text-primary italic">Servizio</span>
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Siamo al tuo <span className="text-primary">servizio.</span>
             </h1>
-            <p className="max-w-2xl text-zinc-400 text-lg md:text-2xl leading-relaxed">
-              Hai un progetto in mente? Zecchi Multiservizi è il tuo partner di fiducia a <span className="text-white font-bold">Terracina</span> e in tutto il Lazio per soluzioni definitive.
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
+              Hai un progetto in mente? Zecchi Multiservizi è il tuo partner di fiducia a{' '}
+              <span className="text-white font-semibold">Terracina</span> e provincia per soluzioni concrete e durature.
             </p>
           </div>
         </div>
       </section>
 
-      {/* --- CONTENUTO PAGINA --- */}
-      <div className="container mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-start">
-          
+      {/* Contenuto Pagina */}
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-stretch">
+
           {/* Colonna Info */}
-          <div className="space-y-8">
-            <h2 className="text-4xl font-black uppercase tracking-tighter text-white flex items-center gap-3">
-              I Nostri <span className="text-primary italic">Recapiti</span>
+          <div className="lg:col-span-7 space-y-5">
+            <h2 className="font-headline text-2xl font-bold tracking-tight text-[#111c16]">
+              I Nostri <span className="text-emerald-700">Recapiti</span>
             </h2>
 
             {/* Card Telefoni */}
-            <Card className="border-white/10 bg-white/5 backdrop-blur-md overflow-hidden border-l-4 border-l-primary">
+            <Card className="surface-light-card rounded-2xl overflow-hidden border-l-4 border-l-primary">
               <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-3 text-xl text-primary uppercase font-black tracking-widest">
-                  <Phone className="h-6 w-6 text-white" /> Linea Diretta
+                <CardTitle className="flex items-center gap-2.5 text-sm text-emerald-800 uppercase font-bold tracking-wider">
+                  <Phone className="h-4 w-4 text-primary" /> Linea Diretta
                 </CardTitle>
               </CardHeader>
-              <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                <a href={`tel:${contactData.monica.replace(/\s/g, '')}`} className="flex flex-col p-5 rounded-2xl bg-zinc-900 hover:bg-primary hover:text-black transition-all group border border-white/5 shadow-xl">
-                  <span className="text-[10px] uppercase font-black opacity-60 tracking-widest">Monica</span>
-                  <span className="text-xl font-black">{contactData.monica}</span>
+              <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <a
+                  href={`tel:${contactData.monica.replace(/\s/g, '')}`}
+                  className="flex items-center justify-between p-4 rounded-xl bg-[#f4f7f3] border border-emerald-950/10 text-[#111c16] hover:bg-primary hover:text-zinc-950 hover:border-primary transition-all group"
+                >
+                  <div>
+                    <span className="block text-[11px] uppercase font-bold opacity-65 tracking-wider">
+                      Monica
+                    </span>
+                    <span className="text-base font-bold tracking-tight">
+                      {contactData.monica}
+                    </span>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </a>
-                <a href={`tel:${contactData.fabio.replace(/\s/g, '')}`} className="flex flex-col p-5 rounded-2xl bg-zinc-900 hover:bg-primary hover:text-black transition-all group border border-white/5 shadow-xl">
-                  <span className="text-[10px] uppercase font-black opacity-60 tracking-widest">Fabio</span>
-                  <span className="text-xl font-black">{contactData.fabio}</span>
+                <a
+                  href={`tel:${contactData.fabio.replace(/\s/g, '')}`}
+                  className="flex items-center justify-between p-4 rounded-xl bg-[#f4f7f3] border border-emerald-950/10 text-[#111c16] hover:bg-primary hover:text-zinc-950 hover:border-primary transition-all group"
+                >
+                  <div>
+                    <span className="block text-[11px] uppercase font-bold opacity-65 tracking-wider">
+                      Fabio
+                    </span>
+                    <span className="text-base font-bold tracking-tight">
+                      {contactData.fabio}
+                    </span>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </a>
               </CardContent>
             </Card>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Email */}
-              <Card className="border-white/10 bg-white/5 backdrop-blur-md hover:border-primary/50 transition-colors">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-sm text-primary uppercase font-bold tracking-widest">
-                    <Mail className="h-5 w-5" /> Email
+              <Card className="surface-light-card rounded-2xl hover:border-primary/60 transition-colors">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-xs text-emerald-800 uppercase font-bold tracking-wider">
+                    <Mail className="h-4 w-4 text-primary" /> Email
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <a href={`mailto:${contactData.email}`} className="text-base font-bold break-all hover:text-white transition-colors underline decoration-primary">
+                  <a
+                    href={`mailto:${contactData.email}`}
+                    className="text-sm font-semibold text-[#111c16] break-all hover:text-emerald-700 transition-colors underline decoration-primary underline-offset-4"
+                  >
                     {contactData.email}
                   </a>
                 </CardContent>
               </Card>
 
               {/* Dove Siamo */}
-              <Card className="border-white/10 bg-white/5 backdrop-blur-md">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-sm text-primary uppercase font-bold tracking-widest">
-                    <MapPin className="h-5 w-5" /> Sede
+              <Card className="surface-light-card rounded-2xl">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-xs text-emerald-800 uppercase font-bold tracking-wider">
+                    <MapPin className="h-4 w-4 text-primary" /> Sede
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-1">
-                  <p className="font-bold text-white uppercase tracking-tight">{contactData.address}</p>
-                  <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest">Copertura: Terracina e Provincia</p>
+                  <p className="text-sm font-semibold text-[#111c16]">
+                    {contactData.address}
+                  </p>
+                  <p className="text-xs text-emerald-950/65">
+                    Copertura: Terracina e Provincia
+                  </p>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Dati Fiscali (Timbro) */}
-            <div className="p-8 rounded-3xl border border-white/5 bg-gradient-to-br from-zinc-900 to-black space-y-4 shadow-inner">
-              <h3 className="flex items-center gap-2 text-zinc-400 font-black text-xs uppercase tracking-[0.3em]">
+            {/* Dati Fiscali */}
+            <div className="p-5 rounded-2xl surface-light-card space-y-3">
+              <h3 className="flex items-center gap-2 text-emerald-900/70 font-bold text-xs uppercase tracking-wider">
                 <FileText className="h-4 w-4 text-primary" /> Dati Aziendali
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
                 <div>
-                    <span className="block text-[10px] text-zinc-600 font-black uppercase">Partita IVA</span>
-                    <span className="text-lg font-mono font-bold text-zinc-300">{contactData.piva}</span>
+                  <span className="block text-[11px] text-emerald-950/55 font-semibold uppercase">
+                    Partita IVA
+                  </span>
+                  <span className="text-sm font-mono font-semibold text-[#111c16]">
+                    {contactData.piva}
+                  </span>
                 </div>
                 <div>
-                    <span className="block text-[10px] text-zinc-600 font-black uppercase">Codice Fiscale</span>
-                    <span className="text-lg font-mono font-bold text-zinc-300">{contactData.cf}</span>
+                  <span className="block text-[11px] text-emerald-950/55 font-semibold uppercase">
+                    Codice Fiscale
+                  </span>
+                  <span className="text-sm font-mono font-semibold text-[#111c16]">
+                    {contactData.cf}
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Immagine e Card Preventivo */}
-          <div className="flex flex-col gap-6 h-full">
-            <div className="relative group h-[400px] lg:flex-1 overflow-hidden rounded-[2.5rem] border border-white/10 shadow-2xl">
+          <div className="lg:col-span-5 flex flex-col">
+            <div className="relative group h-[340px] lg:h-full min-h-[380px] overflow-hidden rounded-2xl border border-emerald-950/15 shadow-xl">
               <Image
                 src={placeholderImages.contact.src}
                 alt="Contatti Zecchi Multiservizi"
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                unoptimized
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
-              
-              <div className="absolute bottom-10 left-10 right-10">
-                 <div className="bg-primary p-8 rounded-[2rem] shadow-2xl transform transition-transform group-hover:-translate-y-2">
-                    <p className="font-black uppercase tracking-tighter text-3xl text-black leading-none mb-2">Preventivi <br/>Gratuiti</p>
-                    <p className="text-black/70 font-bold uppercase tracking-widest text-xs">Sopralluogo immediato senza impegno</p>
-                 </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1611] via-[#0d1611]/25 to-transparent" />
+
+              <div className="absolute bottom-5 left-5 right-5">
+                <div className="bg-primary/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white/20 transition-transform duration-300 group-hover:-translate-y-1">
+                  <p className="font-headline font-extrabold text-xl text-zinc-950 leading-tight">
+                    Preventivi Gratuiti
+                  </p>
+                  <p className="text-zinc-900/80 font-semibold text-xs mt-1">
+                    Sopralluogo rapido senza impegno a Terracina e dintorni
+                  </p>
+                </div>
               </div>
             </div>
           </div>

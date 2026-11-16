@@ -10,29 +10,28 @@ import {
   MapPin,
   FileText,
 } from "lucide-react";
-import { WhatsAppButton } from "./WhatsAppButton";
 
 function ZecchiLogoFooter() {
   return (
     <Link
       href="/"
-      className="flex flex-col md:flex-row items-center gap-5 group"
+      className="flex items-center gap-4 group"
       aria-label="Zecchi Multiservizi Homepage"
     >
-      <div className="relative h-20 w-20 md:h-24 md:w-24 overflow-hidden rounded-2xl shadow-2xl transition-transform group-hover:scale-110">
+      <div className="relative h-20 w-20 rounded-2xl bg-white border border-white/20 p-2 shadow-lg transition-transform group-hover:scale-105 shrink-0">
         <Image
           src="/images/logo.png"
           alt="Logo Zecchi"
           fill
-          className="object-contain"
+          className="object-contain p-1.5"
           unoptimized
         />
       </div>
-      <div className="text-center md:text-left">
-        <span className="block text-3xl font-black text-white tracking-tighter uppercase leading-none">
+      <div className="text-left">
+        <span className="block font-headline text-2xl font-extrabold text-white tracking-tight leading-none">
           Zecchi
         </span>
-        <span className="text-primary text-sm font-bold uppercase tracking-[0.3em]">
+        <span className="text-primary text-xs font-bold uppercase tracking-[0.24em] mt-1 block">
           Multiservizi
         </span>
       </div>
@@ -42,123 +41,122 @@ function ZecchiLogoFooter() {
 
 export function Footer() {
   return (
-    <footer className="w-full border-t-[10px] border-primary bg-zinc-950 text-white overflow-hidden">
-      <div className="container mx-auto max-w-7xl px-6 py-20">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
-          {/* Colonna 1: Brand Power & Sede Legale */}
-          <div className="flex flex-col items-center lg:items-start space-y-8">
+    <footer className="relative w-full border-t border-white/[0.08] bg-[#0c1410] text-white overflow-hidden">
+      {/* Linea luminosa sottile in cima al footer */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 pt-12 pb-24 md:py-14">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {/* Colonna 1: Brand & Sede */}
+          <div className="flex flex-col items-start space-y-5">
             <ZecchiLogoFooter />
-            <div className="space-y-4 text-center lg:text-left">
-              <p className="text-zinc-400 text-lg leading-relaxed max-w-md">
-                Azienda di multiservizi a{" "}
-                <span className="text-white font-bold">
-                  Terracina e Provincia
-                </span>
-                . Dal giardinaggio professionale all'edilizia di qualità.
+            <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              Azienda multiservizi a{" "}
+              <span className="text-white font-semibold">
+                Terracina e Provincia
+              </span>
+              . Dal giardinaggio professionale all&apos;edilizia di qualità.
+            </p>
+            <div className="space-y-1.5 text-zinc-400 text-xs">
+              <p className="flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 text-primary shrink-0" />
+                Via C. Fusco, 4 - 04019 Terracina (LT)
               </p>
-              {/* Dati estratti dall'immagine */}
-              <div className="pt-4 border-t border-white/5 space-y-2 text-zinc-500 text-xs uppercase tracking-widest font-medium">
-                <p className="flex items-center justify-center lg:justify-start gap-2">
-                  <MapPin className="h-3 w-3 text-primary" /> Via C. Fusco, 4 -
-                  04019 Terracina (LT)
-                </p>
-                <p className="flex items-center justify-center lg:justify-start gap-2">
-                  <FileText className="h-3 w-3 text-primary" /> C.F. ZCC MNC
-                  72B44 L120G
-                </p>
-              </div>
+              <p className="flex items-center gap-2">
+                <FileText className="h-3.5 w-3.5 text-primary shrink-0" />
+                C.F. ZCC MNC 72B44 L120G
+              </p>
             </div>
           </div>
 
-          {/* Colonna 2: Contatti Premium */}
-          <div className="flex flex-col items-center space-y-8">
-            <div className="text-center">
-              <h3 className="text-3xl font-black uppercase tracking-tighter text-primary">
+          {/* Colonna 2: Contatti Diretti */}
+          <div className="flex flex-col space-y-4">
+            <div>
+              <h3 className="font-headline text-base font-bold text-white">
                 Contattaci Subito
               </h3>
-              <p className="text-zinc-500 text-sm font-bold uppercase tracking-widest mt-1">
-                Sempre operativi 24/7
+              <p className="text-zinc-500 text-xs mt-0.5">
+                Preventivi e sopralluoghi gratuiti
               </p>
             </div>
 
-            <div className="flex flex-col w-full max-w-xs space-y-5">
+            <div className="flex flex-col gap-2.5 max-w-xs">
               <a
                 href="tel:+393404962500"
-                className="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-primary hover:text-black transition-all group border border-white/10"
+                className="flex items-center justify-between px-4 py-2.5 bg-zinc-900/70 rounded-xl hover:bg-primary hover:text-zinc-950 transition-all group border border-white/[0.08] text-sm"
               >
-                <span className="font-black text-lg">MONICA</span>
-                <Phone className="h-6 w-6" />
+                <span className="font-bold">Monica · 340 496 2500</span>
+                <Phone className="h-4 w-4 text-primary group-hover:text-zinc-950" />
               </a>
               <a
                 href="tel:+393333895067"
-                className="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-primary hover:text-black transition-all group border border-white/10"
+                className="flex items-center justify-between px-4 py-2.5 bg-zinc-900/70 rounded-xl hover:bg-primary hover:text-zinc-950 transition-all group border border-white/[0.08] text-sm"
               >
-                <span className="font-black text-lg">FABIO</span>
-                <Phone className="h-6 w-6" />
+                <span className="font-bold">Fabio · 333 389 5067</span>
+                <Phone className="h-4 w-4 text-primary group-hover:text-zinc-950" />
               </a>
-              <div className="flex items-center gap-3 justify-center text-zinc-400 pt-2 text-sm">
-                <Mail className="h-4 w-4 text-primary" />
-                <span className="hover:text-white transition-colors underline decoration-primary/30">
-                  monicazecchi56@gmail.com
-                </span>
-              </div>
+              <a
+                href="mailto:monicazecchi56@gmail.com"
+                className="flex items-center gap-2 text-zinc-400 hover:text-primary transition-colors pt-1 text-xs"
+              >
+                <Mail className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span>monicazecchi56@gmail.com</span>
+              </a>
             </div>
           </div>
 
-          {/* Colonna 3: Social & P.IVA */}
-          <div className="flex flex-col items-center lg:items-end space-y-10">
-            <div className="flex gap-4">
-              <Link
-                href="https://www.facebook.com/AziendaMultiserviziZecchi"
-                target="_blank"
-                className="bg-[#1877F2] text-white p-4 rounded-full hover:scale-110 transition-all shadow-lg"
-              >
-                <Facebook className="h-7 w-7" />
-              </Link>
+          {/* Colonna 3: Social & Info Legali */}
+          <div className="flex flex-col items-start lg:items-end justify-between space-y-6">
+            <div className="space-y-3 lg:text-right">
+              <h3 className="font-headline text-base font-bold text-white">
+                Seguici sui Social
+              </h3>
+              <div className="flex gap-2.5 lg:justify-end">
+                <Link
+                  href="https://www.facebook.com/AziendaMultiserviziZecchi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Zecchi Multiservizi"
+                  className="h-9 w-9 rounded-full bg-[#1877F2]/90 hover:bg-[#1877F2] text-white flex items-center justify-center hover:scale-105 transition-all shadow-md"
+                >
+                  <Facebook className="h-4 w-4" />
+                </Link>
 
-              <Link
-                href="https://www.instagram.com/zecchimultiservizi"
-                target="_blank"
-                className="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white p-4 rounded-full hover:scale-110 transition-all shadow-lg"
-              >
-                <Instagram className="h-7 w-7" />
-              </Link>
+                <Link
+                  href="https://www.instagram.com/zecchimultiservizi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Zecchi Multiservizi"
+                  className="h-9 w-9 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white flex items-center justify-center hover:scale-105 transition-all shadow-md"
+                >
+                  <Instagram className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-            <div className="text-center lg:text-right space-y-4">
-              {/* Sede Operativa */}
-              <div className="flex items-center justify-center lg:justify-end gap-2 text-primary font-bold uppercase text-[10px] sm:text-xs tracking-widest">
-                <MapPin className="h-4 w-4 text-accent" />
-                <span>Sede Operativa: Terracina (LT)</span>
-              </div>
 
-              {/* Info Legali e Credit */}
-              <div className="text-zinc-500 text-[10px] uppercase tracking-[0.2em] leading-loose">
-                <p>
-                  © {new Date().getFullYear()} Zecchi Multiservizi — Tutti i
-                  diritti riservati
-                </p>
-                <p className="font-semibold text-zinc-400">
-                  P. IVA 02990560597
-                </p>
-
-                {/* Il tuo Link: M Solutions Web */}
-                <div className="mt-4 pt-4 border-t border-white/5 lg:border-none lg:pt-0 lg:mt-2">
-                  <span className="opacity-60">Progetto curato da </span>
-                  <a
-                    href="https://marcocerilli.it"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-white transition-colors duration-300 font-bold decoration-accent/30 underline-offset-4 hover:underline"
-                  >
-                    M Solutions Web
-                  </a>
-                </div>
-              </div>
+            <div className="text-left lg:text-right space-y-1.5 text-zinc-500 text-xs">
+              <p className="font-semibold text-zinc-400">
+                P. IVA 02990560597
+              </p>
+              <p>
+                © {new Date().getFullYear()} Zecchi Multiservizi — Tutti i
+                diritti riservati
+              </p>
+              <p className="pt-1">
+                <span className="opacity-70">Progetto curato da </span>
+                <a
+                  href="https://marcocerilli.it"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-white transition-colors font-semibold underline-offset-4 hover:underline"
+                >
+                  M Solutions Web
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <WhatsAppButton />
     </footer>
   );
 }

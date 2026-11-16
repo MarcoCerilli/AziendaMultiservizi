@@ -1,63 +1,63 @@
 {
   "hero": {
-    "src": "/images/foto3.jpeg",
+    "src": "/images/foto3.webp",
     "hint": "Giardino curato Zecchi Multiservizi"
   },
   "about1": {
-    "src": "/images/foto1.jpeg",
+    "src": "/images/foto1.webp",
     "hint": "Professionalità Zecchi"
   },
   "about2": {
-    "src": "/images/foto2.jpeg",
+    "src": "/images/foto2.webp",
     "hint": "Cura dei dettagli"
   },
   "about3": {
-    "src": "/images/foto3.jpeg",
+    "src": "/images/foto3.webp",
     "hint": "Interventi tecnici"
   },
   "contact": {
-    "src": "/images/foto4.jpeg",
+    "src": "/images/foto4.webp",
     "hint": "Contattaci per un preventivo"
   },
   "services": {
     "giardinaggio": {
       "images": [
-        { "src": "/images/foto3.jpeg", "hint": "Giardino curato" },
-        { "src": "/images/foto5.jpeg", "hint": "Manutenzione giardini" },
-        { "src": "/images/foto2.jpeg", "hint": "Dettaglio verde" },
-        { "src": "/images/foto.jpeg", "hint": "Prato curato" },
-        { "src": "/images/foto4.jpeg", "hint": "Albero con Aiuola" }
+        { "src": "/images/foto3.webp", "hint": "Giardino curato" },
+        { "src": "/images/foto5.webp", "hint": "Manutenzione giardini" },
+        { "src": "/images/foto2.webp", "hint": "Dettaglio verde" },
+        { "src": "/images/foto.webp", "hint": "Prato curato" },
+        { "src": "/images/foto4.webp", "hint": "Albero con Aiuola" }
       ]
     },
     "puliziaTerreni": {
-      "src": "/images/foto6.jpeg",
+      "src": "/images/foto6.webp",
       "hint": "Pulizia e decespugliamento"
     },
     "taglioPiante": {
-      "src": "/images/foto12.png",
+      "src": "/images/foto12.webp",
       "hint": "Abbattimento e potatura"
     },
     "pulizieCondomini": {
-      "src": "/images/foto13.png",
+      "src": "/images/foto13.webp",
       "hint": "Servizi condominiali"
     },
     "lavoriEdili": {
       "images": [
-        { "src": "/images/foto9.jpeg", "hint": "Ristrutturazione" },
-        { "src": "/images/foto6.jpeg", "hint": "Intervento edile" },
-        { "src": "/images/foto7.jpeg", "hint": "Finiture" }
+        { "src": "/images/foto9.webp", "hint": "Ristrutturazione" },
+        { "src": "/images/foto6.webp", "hint": "Intervento edile" },
+        { "src": "/images/foto7.webp", "hint": "Finiture" }
       ]
     },
     "scavi": {
-      "src": "/images/foto10.jpeg",
+      "src": "/images/foto10.webp",
       "hint": "Movimento terra e scavi"
     },
     "impiantiIrrigazione": {
-      "src": "/images/foto11.jpeg",
+      "src": "/images/foto11.webp",
       "hint": "Sistemi di irrigazione"
     },
     "taglioSiepi": {
-      "src": "/images/foto14.png",
+      "src": "/images/foto5.webp",
       "hint": "Taglio e potatura siepi"
     }
   }

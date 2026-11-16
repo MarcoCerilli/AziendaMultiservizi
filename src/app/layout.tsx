@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     siteName: 'Zecchi Multiservizi',
     images: [
       {
-        url: '/og-image.jpg', // Assicurati che questo file esista in /public
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Zecchi Multiservizi - Manutenzione Verde ed Edilizia',
+        alt: 'Zecchi Multiservizi - Manutenzione Verde ed Edilizia a Terracina',
       },
     ],
     locale: 'it_IT',
@@ -75,7 +75,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className="dark" style={{ colorScheme: 'dark' }}>
+    <html lang="it" className="dark scroll-smooth" style={{ colorScheme: 'dark' }}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className={cn('font-body antialiased min-h-screen bg-background flex flex-col')}>
         <script
           type="application/ld+json"
@@ -88,6 +96,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@id": "https://zecchimultiservizi.it",
               "url": "https://zecchimultiservizi.it",
               "telephone": "+393404962500",
+              "email": "monicazecchi56@gmail.com",
+              "priceRange": "$$",
+              "sameAs": [
+                "https://www.facebook.com/AziendaMultiserviziZecchi",
+                "https://www.instagram.com/zecchimultiservizi"
+              ],
+              "areaServed": [
+                { "@type": "City", "name": "Terracina" },
+                { "@type": "City", "name": "San Felice Circeo" },
+                { "@type": "City", "name": "Sabaudia" },
+                { "@type": "City", "name": "Fondi" },
+                { "@type": "City", "name": "Latina" },
+                { "@type": "AdministrativeArea", "name": "Provincia di Latina" }
+              ],
+              "knowsAbout": [
+                "Potatura alto fusto",
+                "Manutenzione giardini",
+                "Scavi e movimento terra",
+                "Piccoli lavori edili",
+                "Impianti di irrigazione",
+                "Pulizia condomini"
+              ],
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Via C. Fusco, 4",
