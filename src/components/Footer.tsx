@@ -139,6 +139,11 @@ export function Footer() {
                 P. IVA 02990560597
               </p>
               <p>
+                <Link href="/privacy" className="hover:text-primary underline transition-colors">
+                  Privacy Policy
+                </Link>
+              </p>
+              <p>
                 © {new Date().getFullYear()} Zecchi Multiservizi — Tutti i
                 diritti riservati
               </p>
